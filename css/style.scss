@@ -18,14 +18,16 @@
 
 .HolyGrail,
 .HolyGrail-body {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  position: relative;
-  background: rgb(238,238,238); /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+  background: rgb(252,255,244); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(165,188,152,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(165,188,152,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(165,188,152,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#a5bc98',GradientType=0 ); /* IE6-9 */
+
 }
 
 .HolyGrail-nav {
@@ -33,11 +35,11 @@
   padding-left: 30px;
   order: -1;
   color: #004700;
-  background: rgb(228,239,192); /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(228,239,192,1) 0%, rgba(171,189,115,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(228,239,192,1) 0%,rgba(171,189,115,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(228,239,192,1) 0%,rgba(171,189,115,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4efc0', endColorstr='#abbd73',GradientType=0 ); /* IE6-9 */
+  background: rgb(252,255,244); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(165,188,152,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(165,188,152,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(165,188,152,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#a5bc98',GradientType=0 ); /* IE6-9 */
   a:visited {
     color: #004700;
   }
@@ -62,13 +64,18 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding-left: 10%;
   background-image: url("../img/greengrass.jpg");
   background-size: cover;
-  height: 60px;
+  height: 70px;
   color: white;
   font-size: 1.2em;
   font-weight: 700;
+  .loginBox {
+    width: 1200px;
+    margin: 0 auto;
+  }
   .apiName {
     text-align: center;
   }
@@ -90,21 +97,22 @@
 .footer {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  height: 30px;
+  height: 45px;
   background-color: gray;
   color: white;
   font-size: 15px;
-  padding-right: 20px;
-  .author {
-    font-size: 20px;
-    margin-left: 5px;
+  .footerBox {
+    padding-right: 20px;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .author {
+      font-size: 20px;
+      margin-left: 10px;
+    }
   }
-}
-
-.box {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .HolyGrail-content {
@@ -147,11 +155,11 @@
 
 .HolyGrail-ads {
   padding-top: 30px;
-  background: rgb(228,239,192); /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(228,239,192,1) 0%, rgba(171,189,115,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(228,239,192,1) 0%,rgba(171,189,115,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(228,239,192,1) 0%,rgba(171,189,115,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4efc0', endColorstr='#abbd73',GradientType=0 ); /* IE6-9 */
+  background: rgb(252,255,244); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(165,188,152,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(165,188,152,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(165,188,152,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#a5bc98',GradientType=0 ); /* IE6-9 */
   text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
   0px -5px 35px rgba(255,255,255,0.3);
   h1 {
@@ -163,7 +171,7 @@
   .HolyGrail-body {
     flex-direction: row;
     flex: 1;
-    min-height: 80vh;
+    min-height: 85vh;
   }
   .HolyGrail-content {
     flex: 1;
@@ -171,8 +179,8 @@
   .HolyGrail-nav, .HolyGrail-ads {
     /* 12em is the width of the columns */
     flex: 0 0 12em;
-    min-height: 80vh;
   }
+
 }
 
 div#login {
