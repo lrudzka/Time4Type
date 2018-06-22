@@ -1,0 +1,234 @@
+/*
+ * @preserve
+ * Pochodzenie stylu: https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/
+ */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#app {
+  background: rgb(238,238,238); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+}
+
+.HolyGrail,
+.HolyGrail-body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: rgb(238,238,238); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+}
+
+.HolyGrail-nav {
+  padding-top: 30px;
+  padding-left: 30px;
+  order: -1;
+  color: #004700;
+  background: rgb(228,239,192); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(228,239,192,1) 0%, rgba(171,189,115,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(228,239,192,1) 0%,rgba(171,189,115,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(228,239,192,1) 0%,rgba(171,189,115,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4efc0', endColorstr='#abbd73',GradientType=0 ); /* IE6-9 */
+  a:visited {
+    color: #004700;
+  }
+  ul.menu {
+    position: relative;
+    li {
+      margin-bottom: 10px;
+      font-size: 17px;
+    }
+    .tooltipText {
+      position: absolute;
+      top: 110%;
+      display: block;
+      background-color: darkgreen;
+      color: white;
+      border: solid black 1px;
+      z-index: 1;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  background-image: url("../img/greengrass.jpg");
+  background-size: cover;
+  height: 60px;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 700;
+  .apiName {
+    text-align: center;
+  }
+  .hello {
+    margin-right: 15px;
+  }
+  .ball {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-left: 40px;
+    margin-right: 40px;
+    transform: translate(0, 10px);
+    -webkit-box-shadow: 13px 4px 19px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 13px 4px 19px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 13px 4px 19px 0px rgba(0, 0, 0, 0.75);
+  }
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 30px;
+  background-color: gray;
+  color: white;
+  font-size: 15px;
+  padding-right: 20px;
+  .author {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+}
+
+.box {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.HolyGrail-content {
+  padding: 30px;
+  h1.userTypes {
+    color: green;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  ol.rules {
+    font-size: 20px;
+    line-height: 30px;
+    span {
+      border-bottom: 1px solid black;
+      font-weight: 700;
+      line-height: 40px;
+    }
+  }
+  h3  {
+    text-decoration: underline;
+    margin-bottom: 20px;
+  }
+  h1 {
+    color: darkgreen;
+    font-size: 2em;
+  }
+  table.typing {
+    margin-top: 30px;
+    tr.typeRow {
+      td {
+        padding: 5px;
+        }
+      td.teams {
+        text-align: center;
+      }
+    }
+  }
+
+}
+
+.HolyGrail-ads {
+  padding-top: 30px;
+  background: rgb(228,239,192); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(228,239,192,1) 0%, rgba(171,189,115,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(228,239,192,1) 0%,rgba(171,189,115,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(228,239,192,1) 0%,rgba(171,189,115,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4efc0', endColorstr='#abbd73',GradientType=0 ); /* IE6-9 */
+  text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+  0px -5px 35px rgba(255,255,255,0.3);
+  h1 {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .HolyGrail-body {
+    flex-direction: row;
+    flex: 1;
+    min-height: 80vh;
+  }
+  .HolyGrail-content {
+    flex: 1;
+  }
+  .HolyGrail-nav, .HolyGrail-ads {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em;
+    min-height: 80vh;
+  }
+}
+
+div#login {
+  margin-bottom: 30px;
+  border-bottom: 1px solid green;
+}
+.type {
+  width: 400px;
+  float: left
+}
+.inputType1, .inputType2 {
+  width: 50px;
+  text-align: center;
+}
+.submitType {
+  width: 200px;
+  height: 30px;
+  background-color: #009700;
+  margin-left: 130px;
+  font-size: 20px;
+}
+button.delete {
+  background-color: #e2391e;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.userTypesTable, .finished {
+  border: 1px solid black;
+  border-collapse: collapse;
+  td, th {
+    border: 1px solid black;
+    padding: 5px;
+  }
+}
+.typeTD {
+  text-align: center;
+}
+
+table.ranking {
+  margin-top: 25px;
+  margin-left: 15px;
+  font-size: 30px;
+  div.avatar {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-size: cover;
+  }
+  td.points, td.rank {
+    text-align: center;
+  }
+  td {
+    padding: 5px;
+  }
+}
+
+
+
