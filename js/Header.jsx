@@ -105,14 +105,20 @@ class Header extends React.Component{
 
         return(
             <section className='header'>
-                <div className="loginBox">
+                <div className="loginBox loginBoxBig">
                     <img className="ball" src='../img/ball.jpg'/>
                     <span className="apiName">TIME4TYPE</span>
                     <img className="ball" src='../img/ball.jpg'/>
                     {hello}
-                    {imgHello}
                     {view}
                     <img className="ball" src='../img/ball.jpg'/>
+                </div>
+                <div className="loginBox loginBoxSmall">
+                    <span className="apiName">T4T</span>
+                    <img className="ball" src='../img/ball.jpg'/>
+                    {hello}
+                    {imgHello}
+                    {view}
                 </div>
             </section>
         )

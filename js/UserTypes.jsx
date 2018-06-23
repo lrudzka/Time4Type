@@ -134,6 +134,12 @@ class UserTypes extends React.Component{
                                                     />)
                         }
                         </tbody>
+                        <tfoot>
+                            <tr className="sumTR">
+                                <td className="sumTD"   colSpan="3">RAZEM: </td>
+                                <td className="typeTD">{newRowClosed.reduce( (prev, curr) => prev+curr.points, 0) }</td>
+                            </tr>
+                        </tfoot>
                     </table>
                     </div>
             </Template>
