@@ -1,0 +1,224 @@
+/*
+ * @preserve
+ * Pochodzenie stylu: https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/
+ */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10%;
+  background-image: url(images/greengrass.jpg);
+  background-size: cover;
+  height: 70px;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 700; }
+  .header .loginBoxBig {
+    display: none; }
+  .header .loginBox {
+    width: 1200px;
+    margin: 0 auto; }
+  .header .apiName {
+    text-align: center;
+    text-shadow: 5px 5px 6px rgba(40, 102, 40, 0.93); }
+  .header .hello {
+    margin-right: 15px; }
+  .header .ball {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-left: 40px;
+    margin-right: 40px;
+    transform: translate(0, 10px);
+    box-shadow: 13px 4px 19px 0px rgba(0, 0, 0, 0.75); }
+
+@media (min-width: 768px) {
+  .header .loginBoxBig {
+    display: block; }
+  .header .loginBoxSmall {
+    display: none; } }
+
+.footer {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  background-color: gray;
+  color: white;
+  font-size: 15px; }
+  .footer .footerBox {
+    padding-right: 20px;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    .footer .footerBox .author {
+      font-size: 20px;
+      margin-left: 10px; }
+
+.HolyGrail-ads {
+  padding-top: 30px;
+  background: #fcfff4;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #a5bc98 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#a5bc98',GradientType=0 );
+  /* IE6-9 */
+  text-shadow: 5px 5px 6px rgba(40, 102, 40, 0.93); }
+  .HolyGrail-ads h1 {
+    text-align: center; }
+
+@media (min-width: 768px) {
+  .HolyGrail-ads {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em; } }
+
+#app {
+  background: #eeeeee;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 );
+  /* IE6-9 */ }
+
+.HolyGrail,
+.HolyGrail-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: #fcfff4;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #a5bc98 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#a5bc98',GradientType=0 );
+  /* IE6-9 */ }
+
+.HolyGrail-content {
+  padding: 30px; }
+  .HolyGrail-content h1.userTypes {
+    color: green;
+    margin-top: 15px;
+    margin-bottom: 5px; }
+  .HolyGrail-content ol.rules {
+    font-size: 20px;
+    line-height: 30px; }
+    .HolyGrail-content ol.rules span {
+      border-bottom: 1px solid black;
+      font-weight: 700;
+      line-height: 40px; }
+  .HolyGrail-content h3 {
+    text-decoration: underline;
+    margin-bottom: 20px; }
+  .HolyGrail-content h1 {
+    color: darkgreen;
+    font-size: 2em; }
+  .HolyGrail-content table.typing {
+    font-size: 20px;
+    margin-top: 30px; }
+    .HolyGrail-content table.typing tr.typeRow td {
+      padding: 5px; }
+    .HolyGrail-content table.typing tr.typeRow td.teams {
+      text-align: center; }
+    .HolyGrail-content table.typing tr.typeRow .inputType1, .HolyGrail-content table.typing tr.typeRow .inputType2 {
+      width: 60px;
+      height: 30px;
+      font-size: 20px;
+      border-radius: 10%;
+      text-align: center; }
+  .HolyGrail-content .submitType {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #009700;
+    margin-left: 130px;
+    font-size: 20px;
+    box-shadow: 10px 10px 66px -5px rgba(0, 0, 0, 0.75); }
+  .HolyGrail-content .userTypesTable, .HolyGrail-content .finished {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 20px; }
+    .HolyGrail-content .userTypesTable td, .HolyGrail-content .userTypesTable th, .HolyGrail-content .finished td, .HolyGrail-content .finished th {
+      border: 1px solid black;
+      padding: 5px; }
+    .HolyGrail-content .userTypesTable tr:nth-child(odd), .HolyGrail-content .finished tr:nth-child(odd) {
+      background-color: rgba(198, 236, 217, 0.3); }
+    .HolyGrail-content .userTypesTable tr.sumTR, .HolyGrail-content .finished tr.sumTR {
+      font-weight: 700; }
+      .HolyGrail-content .userTypesTable tr.sumTR .sumTD, .HolyGrail-content .finished tr.sumTR .sumTD {
+        text-align: right;
+        padding-right: 10px; }
+  .HolyGrail-content button.delete {
+    background-color: #e2391e;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px; }
+  .HolyGrail-content .typeTD {
+    text-align: center; }
+  .HolyGrail-content table.ranking {
+    margin-top: 25px;
+    margin-left: 15px;
+    font-size: 30px; }
+    .HolyGrail-content table.ranking div.avatar {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-size: cover; }
+    .HolyGrail-content table.ranking td.points, .HolyGrail-content table.ranking td.rank {
+      text-align: center; }
+    .HolyGrail-content table.ranking td {
+      padding: 5px; }
+
+@media (min-width: 768px) {
+  .HolyGrail-body {
+    flex-direction: row;
+    flex: 1;
+    min-height: 85vh; }
+  .HolyGrail-content {
+    flex: 1; } }
+
+.HolyGrail-nav {
+  padding-top: 30px;
+  padding-left: 30px;
+  order: -1;
+  color: #004700;
+  background: #fcfff4;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #a5bc98 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#a5bc98',GradientType=0 );
+  /* IE6-9 */ }
+  .HolyGrail-nav a:visited {
+    color: #004700; }
+  .HolyGrail-nav ul.menu {
+    position: relative; }
+    .HolyGrail-nav ul.menu li {
+      margin-bottom: 10px;
+      font-size: 17px; }
+    .HolyGrail-nav ul.menu .tooltipText {
+      position: absolute;
+      top: 110%;
+      display: block;
+      background-color: darkgreen;
+      color: white;
+      border: solid black 1px;
+      z-index: 1; }
+
+@media (min-width: 768px) {
+  .HolyGrail-nav {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em; } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+

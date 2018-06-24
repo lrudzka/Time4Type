@@ -66,9 +66,9 @@ class App extends React.Component{
                 }
                 typesArray.push(newEl)
             }
-            // ograczenie danych - bierzemy tylko te ze statusem 'open'
+            // ograczenie danych - bierzemy tylko te ze statusem 'open' oraz 'in_play'
             this.setState({
-                usersTypes: typesArray.filter(el => el.status == 'open')
+                usersTypes: typesArray.filter(el => el.status == 'open' || el.status == 'in_play')
             })
         }).catch(err => console.log(err))
 
