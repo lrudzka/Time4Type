@@ -28,13 +28,16 @@
     margin-bottom: 5px;
   }
   ol.rules {
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 17px;
+    line-height: 20px;
     span {
       border-bottom: 1px solid black;
       font-weight: 700;
       line-height: 40px;
     }
+  }
+  .rulesBox {
+    width: 100%;
   }
   h3  {
     text-decoration: underline;
@@ -126,7 +129,7 @@
 
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .HolyGrail-body {
     flex-direction: row;
     flex: 1;
@@ -134,5 +137,14 @@
   }
   .HolyGrail-content {
     flex: 1;
+    ol.rules {
+      font-size: 20px;
+      line-height: 30px;
+      span {
+        border-bottom: 1px solid black;
+        font-weight: 700;
+        line-height: 40px;
+      }
+    }
   }
 }

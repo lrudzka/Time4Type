@@ -32,7 +32,7 @@
     transform: translate(0, 10px);
     box-shadow: 13px 4px 19px 0px rgba(0, 0, 0, 0.75); }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .header .loginBoxBig {
     display: block; }
   .header .loginBoxSmall {
@@ -70,7 +70,7 @@
   .HolyGrail-ads h1 {
     text-align: center; }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .HolyGrail-ads {
     /* 12em is the width of the columns */
     flex: 0 0 12em; } }
@@ -107,12 +107,14 @@
     margin-top: 15px;
     margin-bottom: 5px; }
   .HolyGrail-content ol.rules {
-    font-size: 20px;
-    line-height: 30px; }
+    font-size: 17px;
+    line-height: 20px; }
     .HolyGrail-content ol.rules span {
       border-bottom: 1px solid black;
       font-weight: 700;
       line-height: 40px; }
+  .HolyGrail-content .rulesBox {
+    width: 100%; }
   .HolyGrail-content h3 {
     text-decoration: underline;
     margin-bottom: 20px; }
@@ -175,13 +177,20 @@
     .HolyGrail-content table.ranking td {
       padding: 5px; }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .HolyGrail-body {
     flex-direction: row;
     flex: 1;
     min-height: 85vh; }
   .HolyGrail-content {
-    flex: 1; } }
+    flex: 1; }
+    .HolyGrail-content ol.rules {
+      font-size: 20px;
+      line-height: 30px; }
+      .HolyGrail-content ol.rules span {
+        border-bottom: 1px solid black;
+        font-weight: 700;
+        line-height: 40px; } }
 
 .HolyGrail-nav {
   padding-top: 30px;
@@ -202,7 +211,7 @@
     position: relative; }
     .HolyGrail-nav ul.menu li {
       margin-bottom: 10px;
-      font-size: 17px; }
+      font-size: 22px; }
     .HolyGrail-nav ul.menu .tooltipText {
       position: absolute;
       top: 110%;
@@ -212,10 +221,13 @@
       border: solid black 1px;
       z-index: 1; }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .HolyGrail-nav {
     /* 12em is the width of the columns */
-    flex: 0 0 12em; } }
+    flex: 0 0 12em; }
+    .HolyGrail-nav ul.menu li {
+      margin-bottom: 10px;
+      font-size: 17px; } }
 
 * {
   margin: 0;
