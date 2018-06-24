@@ -1,5 +1,9 @@
 import React from 'react';
 import Template from './Template.jsx';
+import FinishedRow from './FinishedRow.jsx';
+
+let url_games = 'http://api.football-data.org/v1/competitions/';
+let event_number = '467';
 
 class Finished extends React.Component{
     constructor(props){
@@ -11,7 +15,7 @@ class Finished extends React.Component{
 
     componentDidMount() {
 
-       fetch('http://api.football-data.org/v1/competitions/467/fixtures', { headers: {"X-Auth-Token": "1e265f892ce541f69195f6d45eedccc8" }  } )
+       fetch( url_games + event_number + '/fixtures', { headers: {"X-Auth-Token": "1e265f892ce541f69195f6d45eedccc8" }  } )
             .then( resp => {
                 if(resp.ok){
                     return resp.json()
@@ -41,23 +45,19 @@ class Finished extends React.Component{
                             <th>WYNIK</th>
                         </thead>
                         <tbody>
-                        { this.state.games.filter( el => el.status === 'IN_PLAY'  )
-                            .map( el =>
-                                <tr key={el._links.self.href}>
-                                    <td> {el.date.slice(0,10)} </td>
-                                    <td className="typeTD">{el.homeTeamName} : {el.awayTeamName}</td>
-                                    <td className="typeTD"> {el.result.goalsHomeTeam} : {el.result.goalsAwayTeam} (mecz w trakcie)</td>
-                                </tr>) }
-                        { this.state.games.filter( el => el.status === 'FINISHED'  )
-                            .map( el =>
-                                <tr key={el._links.self.href}>
-                                    <td> {el.date.slice(0,10)} </td>
-                                    <td className="typeTD">{el.homeTeamName} : {el.awayTeamName}</td>
-                                    <td className="typeTD"> {el.result.goalsHomeTeam} : {el.result.goalsAwayTeam}</td>
-                                </tr>) }
+                        { this.state.games.filter( el => el.status == 'FINISHED'|| el.status=='IN_PLAY')
+                            .map( el => <FinishedRow key = {el._links.self.href}
+                                                                    date = {el.date}
+                                                                    homeTeamName ={el.homeTeamName}
+                                                                    awayTeamName = {el.awayTeamName}
+                                                                    goalsHomeTeam = {el.result.goalsHomeTeam}
+                                                                    goalsAwayTeam = {el.result.goalsAwayTeam}
+                                                                    status = {el.status}
+                                                                    />
 
+
+                        )}
                         </tbody>
-
                     </table>
                  </section>
             </Template>

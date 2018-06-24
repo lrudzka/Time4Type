@@ -20,8 +20,11 @@ class UserTypesRow extends React.Component{
 
         if ( this.props.status==='open') {
             view = <button className="delete" onClick={this.handleClick} > X </button>
-        } else
+        } else if (this.props.status === 'in_play') {
+            view = <span>mecz w trakcie</span>
+        } else {
             view = this.props.points
+        }
 
         return(
 

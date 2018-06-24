@@ -1,0 +1,38 @@
+.HolyGrail-nav {
+  padding-top: 30px;
+  padding-left: 30px;
+  order: -1;
+  color: #004700;
+  background: rgb(252,255,244); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(165,188,152,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(165,188,152,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(165,188,152,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#a5bc98',GradientType=0 ); /* IE6-9 */
+  a:visited {
+    color: #004700;
+  }
+  ul.menu {
+    position: relative;
+    li {
+      margin-bottom: 10px;
+      font-size: 17px;
+    }
+    .tooltipText {
+      position: absolute;
+      top: 110%;
+      display: block;
+      background-color: darkgreen;
+      color: white;
+      border: solid black 1px;
+      z-index: 1;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  .HolyGrail-nav {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em;
+  }
+}

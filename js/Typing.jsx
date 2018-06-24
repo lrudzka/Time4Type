@@ -3,6 +3,10 @@ import Template from './Template.jsx';
 import Auth from './Services/Auth';
 import TypeRow from './TypeRow.jsx'
 
+let url_games = 'http://api.football-data.org/v1/competitions/';
+let event_number = '467';
+let url_types = 'https://ubet-60936.firebaseio.com/types';
+
 class Typing extends React.Component{
     constructor(props){
         super(props);
@@ -13,7 +17,8 @@ class Typing extends React.Component{
     }
 
     handleSubmit = (event) => {
-        // przesyłanie wprowadzonych typów do tabeli z typami
+        // przesyłanie wprowadzonych typów do obiektu Types
+
         Auth.checkLogedIn();
 
         let typesArray = event.target.parentElement.querySelectorAll('tr.typeRow');
@@ -43,7 +48,7 @@ class Typing extends React.Component{
                 typesMatchId.push(typeData.matchId)
 
 
-                fetch('https://ubet-60936.firebaseio.com/types.json', { method: 'POST', body: JSON.stringify(typeData) } )
+                fetch(url_types + '.json', { method: 'POST', body: JSON.stringify(typeData) } )
                     .then( resp => {
                         if(resp.ok){
                             return resp.json()
@@ -67,8 +72,8 @@ class Typing extends React.Component{
     componentWillMount(){
         Auth.checkLogedIn();
 
-        // pobieranie danych z serwera - obiekt types
-        fetch('https://ubet-60936.firebaseio.com/types.json')
+        // pobieranie danych z serwera - obiekt Types
+        fetch(url_types + '.json')
             .then( resp => {
                 if(resp.ok){
                     return resp.json()
@@ -89,7 +94,7 @@ class Typing extends React.Component{
         }).catch( err => console.log(err) );
 
         // pobieranie danych z zewnętrznego API - mecze do obstawiania
-        fetch('http://api.football-data.org/v1/competitions/467/fixtures', { headers: {"X-Auth-Token": "1e265f892ce541f69195f6d45eedccc8" }  } )
+        fetch(url_games + event_number + '/fixtures', { headers: {"X-Auth-Token": "1e265f892ce541f69195f6d45eedccc8" }  } )
             .then( resp => {
                 if(resp.ok){
                     return resp.json()

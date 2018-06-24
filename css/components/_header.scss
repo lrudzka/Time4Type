@@ -1,0 +1,49 @@
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10%;
+  background-image: url("../img/greengrass.jpg");
+  background-size: cover;
+  height: 70px;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 700;
+  .loginBoxBig {
+    display: none;
+  }
+  .loginBox {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .apiName {
+    text-align: center;
+    text-shadow: 5px 5px 6px rgba(40, 102, 40, 0.93);
+  }
+  .hello {
+    margin-right: 15px;
+  }
+  .ball {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-left: 40px;
+    margin-right: 40px;
+    transform: translate(0, 10px);
+    -webkit-box-shadow: 13px 4px 19px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 13px 4px 19px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 13px 4px 19px 0px rgba(0, 0, 0, 0.75);
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    .loginBoxBig {
+      display: block;
+    }
+    .loginBoxSmall {
+      display: none;
+    }
+  }
+}

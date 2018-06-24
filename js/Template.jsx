@@ -1,8 +1,8 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
-import Header from './Header.jsx';
-import Ads from './Ads.jsx';
-import Footer from './Footer.jsx';
+import Header from './Main/Header.jsx';
+import Ads from './Main/Ads.jsx';
+import Footer from './Main/Footer.jsx';
 
 class Template extends React.Component{
     constructor(props){

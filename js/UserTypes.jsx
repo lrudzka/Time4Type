@@ -3,6 +3,8 @@ import Template from './Template.jsx';
 import Auth from './Services/Auth';
 import UserTypesRow from './UserTypesRow.jsx'
 
+let url_types = 'https://ubet-60936.firebaseio.com/types';
+
 class UserTypes extends React.Component{
     constructor(props){
         super(props);
@@ -17,7 +19,7 @@ class UserTypes extends React.Component{
         Auth.checkLogedIn();
 
         // pobieranie danych z serwera - tabela TYPES
-        fetch('https://ubet-60936.firebaseio.com/types.json')
+        fetch(url_types + '.json')
             .then(resp => {
                 if (resp.ok) {
                     return resp.json()
@@ -33,7 +35,7 @@ class UserTypes extends React.Component{
 
     handleClickDelete = (key) => {
         // usunięcie wybranego wiersza
-        fetch('https://ubet-60936.firebaseio.com/types/'+key+'.json', {method: 'delete'})
+        fetch(url_types +'/'+key+'.json', {method: 'delete'})
             .then(resp => {
                 if (resp.ok) {
                     return resp.json()
@@ -76,7 +78,7 @@ class UserTypes extends React.Component{
         } )
 
 
-        let newRowOpen = newRow.filter( el => el.status == 'open'  );
+        let newRowOpen = newRow.filter( el => el.status == 'open' || el.status == 'in_play' );
         let newRowClosed = newRow.filter( el => el.status == 'closed');
 
         return(

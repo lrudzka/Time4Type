@@ -45,7 +45,7 @@ class TypeRow extends React.Component{
                                                                 data-awayteamname={this.props.awayTeamName}>
                 <td> {this.props.date} </td>
                 <td className="teams"> {this.props.homeTeamName} : {this.props.awayTeamName}</td>
-                <td>  <input onChange = {this.handleChangeHomeGoal} className="inputType1" type="number" value = {this.state.homeTeamGoal}/> : <input onChange={this.handleChangeAwayGoal} className="inputType2" type="number" value={this.state.awayTeamGoal}/> </td>
+                <td className="inputs">  <input onChange = {this.handleChangeHomeGoal} className="inputType1" type="number" value = {this.state.homeTeamGoal}/> : <input onChange={this.handleChangeAwayGoal} className="inputType2" type="number" value={this.state.awayTeamGoal}/> </td>
             </tr>
         )
     }

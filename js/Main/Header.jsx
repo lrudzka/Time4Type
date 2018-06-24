@@ -110,6 +110,7 @@ class Header extends React.Component{
                     <span className="apiName">TIME4TYPE</span>
                     <img className="ball" src='../img/ball.jpg'/>
                     {hello}
+                    {imgHello}
                     {view}
                     <img className="ball" src='../img/ball.jpg'/>
                 </div>
