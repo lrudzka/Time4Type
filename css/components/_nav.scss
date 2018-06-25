@@ -1,6 +1,6 @@
 .HolyGrail-nav {
-  padding-top: 30px;
-  padding-left: 30px;
+  padding-top: 5%;
+  padding-left: 10%;
   order: -1;
   color: #004700;
   background: rgb(252,255,244); /* Old browsers */
@@ -14,8 +14,8 @@
   ul.menu {
     position: relative;
     li {
-      margin-bottom: 10px;
-      font-size: 22px;
+      line-height: 2.5em;
+      font-size: 2.2em;
     }
     .tooltipText {
       position: absolute;
@@ -33,11 +33,14 @@
 
   .HolyGrail-nav {
     /* 12em is the width of the columns */
+    border-right: 1px solid white;
     flex: 0 0 12em;
+    padding-top: 2%;
+    padding-left: 3%;
     ul.menu {
       li {
-        margin-bottom: 10px;
-        font-size: 17px;
+        line-height: 1.6em;
+        font-size: 1.0em;
       }
     }
   }

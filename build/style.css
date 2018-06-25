@@ -73,6 +73,7 @@
 @media (min-width: 1024px) {
   .HolyGrail-ads {
     /* 12em is the width of the columns */
+    border-left: 1px solid white;
     flex: 0 0 12em; } }
 
 #app {
@@ -107,13 +108,14 @@
     margin-top: 15px;
     margin-bottom: 5px; }
   .HolyGrail-content ol.rules {
-    font-size: 17px;
-    line-height: 20px; }
+    font-size: 1.5em;
+    line-height: 1.8em; }
     .HolyGrail-content ol.rules span {
       border-bottom: 1px solid black;
       font-weight: 700;
       line-height: 40px; }
   .HolyGrail-content .rulesBox {
+    padding-left: 10%;
     width: 100%; }
   .HolyGrail-content h3 {
     text-decoration: underline;
@@ -184,6 +186,8 @@
     min-height: 85vh; }
   .HolyGrail-content {
     flex: 1; }
+    .HolyGrail-content .rulesBox {
+      padding-left: 5%; }
     .HolyGrail-content ol.rules {
       font-size: 20px;
       line-height: 30px; }
@@ -193,8 +197,8 @@
         line-height: 40px; } }
 
 .HolyGrail-nav {
-  padding-top: 30px;
-  padding-left: 30px;
+  padding-top: 5%;
+  padding-left: 10%;
   order: -1;
   color: #004700;
   background: #fcfff4;
@@ -210,8 +214,8 @@
   .HolyGrail-nav ul.menu {
     position: relative; }
     .HolyGrail-nav ul.menu li {
-      margin-bottom: 10px;
-      font-size: 22px; }
+      line-height: 2.5em;
+      font-size: 2.2em; }
     .HolyGrail-nav ul.menu .tooltipText {
       position: absolute;
       top: 110%;
@@ -224,13 +228,17 @@
 @media (min-width: 1024px) {
   .HolyGrail-nav {
     /* 12em is the width of the columns */
-    flex: 0 0 12em; }
+    border-right: 1px solid white;
+    flex: 0 0 12em;
+    padding-top: 2%;
+    padding-left: 3%; }
     .HolyGrail-nav ul.menu li {
-      margin-bottom: 10px;
-      font-size: 17px; } }
+      line-height: 1.6em;
+      font-size: 1.0em; } }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: Tahoma, Arial, 'sans-serif'; }
 

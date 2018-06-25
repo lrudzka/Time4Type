@@ -28,8 +28,8 @@
     margin-bottom: 5px;
   }
   ol.rules {
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 1.5em;
+    line-height: 1.8em;
     span {
       border-bottom: 1px solid black;
       font-weight: 700;
@@ -37,6 +37,7 @@
     }
   }
   .rulesBox {
+    padding-left: 10%;
     width: 100%;
   }
   h3  {
@@ -137,6 +138,9 @@
   }
   .HolyGrail-content {
     flex: 1;
+    .rulesBox {
+      padding-left: 5%;
+    }
     ol.rules {
       font-size: 20px;
       line-height: 30px;
