@@ -1,5 +1,5 @@
 # Time4Type
-Application for typing results of the football metches.
+Application for typing results of football metches.
 
 It is my final project on my programming bootcamp at CodersLab.
 
