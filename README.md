@@ -1,7 +1,7 @@
 # Time4Type
 Application for typing results of football metches.
 
-It is my final project on my programming bootcamp at CodersLab.
+It is my final project on the coding bootcamp at CodersLab.
 
 It was created using React.
 
