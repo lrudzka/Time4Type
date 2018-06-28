@@ -120,16 +120,29 @@ class Typing extends React.Component{
 
     render(){
 
+        let rowsToType = this.state.games.filter( el => this.state.gamesTypes.indexOf(el._links.self.href)<0);
+
+        let view;
+
+        if ( rowsToType.length ==0 ) {
+            view = <thead>
+                        <th colSpan="3">Na razie brak kolejnych pozycji</th>
+                   </thead>
+        } else {
+            view = <thead>
+                        <th>Data</th>
+                        <th>Drużyny</th>
+                        <th>Wprowadź swoje typy</th>
+                  </thead>
+        }
+
         return(
             <Template>
                 <section className="HolyGrail-content">
                     <input  onClick={this.handleSubmit} className="submitType" type="submit" value="Prześlij swoje typy"/>
+
                     <table className="typing">
-                        <thead>
-                            <th>Data</th>
-                            <th>Drużyny</th>
-                            <th>Wprowadź swoje typy</th>
-                        </thead>
+                        {view}
                         <tbody>
                         {this.state.games.filter( el => this.state.gamesTypes.indexOf(el._links.self.href)<0)
                             .map( el => <TypeRow id={el._links.self.href}

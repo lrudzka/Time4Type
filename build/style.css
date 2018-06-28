@@ -103,6 +103,17 @@
 
 .HolyGrail-content {
   padding: 30px; }
+  .HolyGrail-content form.finishedForm {
+    margin-bottom: 1em;
+    font-size: 1.4em; }
+    .HolyGrail-content form.finishedForm input {
+      margin-left: 1em;
+      border-radius: 10px;
+      font-size: 1.1em;
+      width: 10em; }
+  .HolyGrail-content div.info {
+    font-size: 1.3em;
+    margin-top: 2em; }
   .HolyGrail-content h1.userTypes {
     color: green;
     margin-top: 15px;

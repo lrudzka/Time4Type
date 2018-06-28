@@ -18,7 +18,6 @@ class Finished extends React.Component{
         this.setState({
             search: event.target.value
         });
-        console.log(event.target.value)
     }
 
     componentDidMount() {
