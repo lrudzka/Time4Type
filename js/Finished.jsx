@@ -9,8 +9,16 @@ class Finished extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            games: []
+            games: [],
+            search: ""
         }
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            search: event.target.value
+        });
+        console.log(event.target.value)
     }
 
     componentDidMount() {
@@ -35,9 +43,21 @@ class Finished extends React.Component{
 
     render(){
 
+        let gamesArray = this.state.games.filter(el => el.status == 'FINISHED'|| el.status=='IN_PLAY' );
+
+
+        if ( this.state.search != "" ){
+            gamesArray = gamesArray.filter ( el => el.homeTeamName.toUpperCase().indexOf(this.state.search.toUpperCase())>=0 ||  el.awayTeamName.toUpperCase().indexOf(this.state.search.toUpperCase())>=0  )
+        }
+
         return(
             <Template>
                 <section className="HolyGrail-content">
+                    <form className="finishedForm">
+                        <label>Wyszukaj drużynę:
+                            <input onChange = {this.handleChange} type="text" value={this.state.search}/>
+                        </label>
+                    </form>
                     <table className='finished'>
                         <thead>
                             <th>DATA</th>
@@ -45,8 +65,7 @@ class Finished extends React.Component{
                             <th>WYNIK</th>
                         </thead>
                         <tbody>
-                        { this.state.games.filter( el => el.status == 'FINISHED'|| el.status=='IN_PLAY')
-                            .map( el => <FinishedRow key = {el._links.self.href}
+                        { gamesArray.map( el => <FinishedRow key = {el._links.self.href}
                                                                     date = {el.date}
                                                                     homeTeamName ={el.homeTeamName}
                                                                     awayTeamName = {el.awayTeamName}
