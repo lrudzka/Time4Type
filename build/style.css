@@ -222,11 +222,33 @@
   /* IE6-9 */ }
   .HolyGrail-nav a:visited {
     color: #004700; }
+  .HolyGrail-nav a {
+    color: #004700; }
   .HolyGrail-nav ul.menu {
     position: relative; }
+    .HolyGrail-nav ul.menu p.hamburgerMenu {
+      font-size: 3.4em;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 1.25em;
+      color: #004700; }
+    .HolyGrail-nav ul.menu p.hamburgerMenu:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.25em;
+      width: 1em;
+      height: 0.15em;
+      background: #004700;
+      box-shadow: 0 0.25em 0 0 #004700, 0 0.5em 0 0 #004700; }
     .HolyGrail-nav ul.menu li {
       line-height: 2.5em;
       font-size: 2.2em; }
+    .HolyGrail-nav ul.menu li.show {
+      display: block; }
+    .HolyGrail-nav ul.menu li.hide {
+      display: none; }
     .HolyGrail-nav ul.menu .tooltipText {
       position: absolute;
       top: 110%;
@@ -243,9 +265,13 @@
     flex: 0 0 12em;
     padding-top: 2%;
     padding-left: 3%; }
+    .HolyGrail-nav ul.menu p.hamburgerMenu {
+      display: none; }
     .HolyGrail-nav ul.menu li {
       line-height: 1.6em;
-      font-size: 1.0em; } }
+      font-size: 1.0em; }
+    .HolyGrail-nav ul.menu li.hide {
+      display: block; } }
 
 * {
   margin: 0;
