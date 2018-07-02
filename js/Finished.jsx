@@ -42,8 +42,31 @@ class Finished extends React.Component{
 
     render(){
 
-        let gamesArray = this.state.games.filter(el => el.status == 'FINISHED'|| el.status=='IN_PLAY' );
+        console.log('testET', this.state.games);
 
+        let gamesArray = [];
+
+        this.state.games.filter(el => el.status == 'FINISHED'|| el.status=='IN_PLAY' ).forEach ( val => {
+            let extraTimeGoalsHomeTeam = val.result.extraTime ? val.result.extraTime.goalsHomeTeam : null;
+            let extraTimeGoalsAwayTeam = val.result.extraTime ? val.result.extraTime.goalsAwayTeam: null;
+            let penaltyHomeTeam = val.result.penaltyShootout? val.result.penaltyShootout.goalsHomeTeam: null;
+            let penaltyAwayTeam = val.result.penaltyShootout? val.result.penaltyShootout.goalsAwayTeam: null;
+            let matchId = val._links.self.href;
+            let newRow = {
+                matchId: matchId,
+                homeTeamName: val.homeTeamName,
+                awayTeamName: val.awayTeamName,
+                resultGoalsHomeTeam: val.result.goalsHomeTeam,
+                resultGoalsAwayTeam: val.result.goalsAwayTeam,
+                extraTimeGoalsHomeTeam: extraTimeGoalsHomeTeam,
+                extraTimeGoalsAwayTeam: extraTimeGoalsAwayTeam,
+                status: val.status,
+                date: val.date,
+                penaltyHomeTeam: penaltyHomeTeam,
+                penaltyAwayTeam: penaltyAwayTeam
+            }
+            gamesArray.push(newRow);
+        })
 
         if ( this.state.search != "" ){
             gamesArray = gamesArray.filter ( el => el.homeTeamName.toUpperCase().indexOf(this.state.search.toUpperCase())>=0 ||  el.awayTeamName.toUpperCase().indexOf(this.state.search.toUpperCase())>=0  )
@@ -64,13 +87,15 @@ class Finished extends React.Component{
                             <th>WYNIK</th>
                         </thead>
                         <tbody>
-                        { gamesArray.map( el => <FinishedRow key = {el._links.self.href}
+                        { gamesArray.map( el => <FinishedRow key = {el.matchId}
                                                                     date = {el.date}
                                                                     homeTeamName ={el.homeTeamName}
                                                                     awayTeamName = {el.awayTeamName}
-                                                                    goalsHomeTeam = {el.result.goalsHomeTeam}
-                                                                    goalsAwayTeam = {el.result.goalsAwayTeam}
+                                                                    goalsHomeTeam = {el.resultGoalsHomeTeam}
+                                                                    goalsAwayTeam = {el.resultGoalsAwayTeam}
                                                                     status = {el.status}
+                                                                    penaltyHomeTeam = {el.penaltyHomeTeam}
+                                                                    penaltyAwayTeam = {el.penaltyAwayTeam}
                                                                     />
 
 
