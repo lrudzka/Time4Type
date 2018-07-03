@@ -96,6 +96,8 @@ class Finished extends React.Component{
                                                                     status = {el.status}
                                                                     penaltyHomeTeam = {el.penaltyHomeTeam}
                                                                     penaltyAwayTeam = {el.penaltyAwayTeam}
+                                                                    extraTimeGoalsHomeTeam = {el.extraTimeGoalsHomeTeam}
+                                                                    extraTimeGoalsAwayTeam = {el.extraTimeGoalsAwayTeam}
                                                                     />
 
 

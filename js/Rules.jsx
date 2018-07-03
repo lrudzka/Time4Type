@@ -15,7 +15,7 @@ class Rules extends React.Component{
                             <li> Za poprawne wskazanie zwycięzcy meczu gracz otrzymuje 1 punkt</li>
                             <li> Za poprawne wytypowanie remisu gracz otrzymuje 1 punkt</li>
                             <li> Aby zmienić swój typ należy go najpierw usunąć z listy</li>
-                            <li> W przypadku meczów pucharowych typujemy wynik nie uwzględniając rzutów karnych</li>
+                            <li> Typujemy wyniki uzyskane w regulaminowym czasie gry</li>
                         </ol>
                     </div>
                 </div>

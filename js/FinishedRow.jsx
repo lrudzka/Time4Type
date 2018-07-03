@@ -17,12 +17,18 @@ class FinishedRow extends React.Component {
             viewPenalty = <span> ({this.props.penaltyHomeTeam} : {this.props.penaltyAwayTeam})</span>
         }
 
+        let viewExtraTime;
+
+        if (this.props.extraTimeGoalsHomeTeam!=null) {
+            viewExtraTime = <span> ({this.props.extraTimeGoalsHomeTeam} : {this.props.extraTimeGoalsAwayTeam})</span>
+        }
+
 
         return(
             <tr>
                 <td> {this.props.date.slice(0,10)} </td>
                 <td className="typeTD"> {this.props.homeTeamName} : {this.props.awayTeamName}</td>
-                <td className="typeTD"> {this.props.goalsHomeTeam} : {this.props.goalsAwayTeam} {viewPenalty} {view} </td>
+                <td className="typeTD"> {this.props.goalsHomeTeam} : {this.props.goalsAwayTeam} {viewExtraTime}{viewPenalty} {view} </td>
             </tr>)
 
     }

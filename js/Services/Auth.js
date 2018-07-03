@@ -9,9 +9,6 @@ class Auth{
             window.location.replace('/');
         }
 
-
-
-
     }
 
 

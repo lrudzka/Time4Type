@@ -6,7 +6,8 @@ class Footer extends React.Component{
         return(
             <div className="footer">
                 <div className="footerBox">
-                created by:  <span className="author">Lucyna Rudzka</span>
+                    <span id='cookies'>Strona korzysta z plików cookie. Możesz określić warunki przechowywania lub dostępu do cookie w Twojej przeglądarce.</span>
+                    <div id='signingBox'>created by:  <span className="author">Lucyna Rudzka</span></div>
                 </div>
             </div>
         )
