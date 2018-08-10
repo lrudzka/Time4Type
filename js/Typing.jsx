@@ -1,11 +1,8 @@
 import React from 'react';
 import Template from './Template.jsx';
 import Auth from './Services/Auth';
-import TypeRow from './TypeRow.jsx'
-
-let url_games = 'http://api.football-data.org/v1/competitions/';
-let event_number = '467';
-let url_types = 'https://ubet-60936.firebaseio.com/types';
+import TypeRow from './TypeRow.jsx';
+import FetchService from './Services/FetchService';
 
 class Typing extends React.Component{
     constructor(props){
@@ -47,19 +44,7 @@ class Typing extends React.Component{
                 }
                 typesMatchId.push(typeData.matchId)
 
-
-                fetch(url_types + '.json', { method: 'POST', body: JSON.stringify(typeData) } )
-                    .then( resp => {
-                        if(resp.ok){
-                            return resp.json()
-                        }else{
-                            throw new Error("Network error")
-                        }
-                    }).then(data => {
-                    console.log(data)
-                }).catch( err => console.log(err) );
-
-
+                FetchService.sendTypesData(typeData);
             }
         }
 
@@ -73,14 +58,8 @@ class Typing extends React.Component{
         Auth.checkLogedIn();
 
         // pobieranie danych z serwera - obiekt Types
-        fetch(url_types + '.json')
-            .then( resp => {
-                if(resp.ok){
-                    return resp.json()
-                }else{
-                    throw new Error("Network error")
-                }
-            }).then(data => {
+
+        FetchService.getTypesData(data => {
             let typesArray = []
             for (let key in data) {
                 typesArray.push(data[key])
@@ -91,17 +70,9 @@ class Typing extends React.Component{
                 gamesTypes: typesArray.filter( el => el.user.email === localStorage.getItem('userEmail')).map( el => el.matchId)
             })
 
-        }).catch( err => console.log(err) );
+        }  )
 
-        // pobieranie danych z zewnętrznego API - mecze do obstawiania
-        fetch(url_games + event_number + '/fixtures', { headers: {"X-Auth-Token": "1e265f892ce541f69195f6d45eedccc8" }  } )
-            .then( resp => {
-                if(resp.ok){
-                    return resp.json()
-                }else{
-                    throw new Error("Network error")
-                }
-            }).then(data => {
+        FetchService.getFootballData( data => {
 
             let games = data.fixtures.map( el => {
                 return (
@@ -113,8 +84,7 @@ class Typing extends React.Component{
             this.setState({
                 games: games.filter(el => el.status === 'TIMED')
             })
-        }).catch( err => console.log(err) );
-
+        }  )
     }
 
 

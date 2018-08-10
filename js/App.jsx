@@ -12,24 +12,7 @@ import Finished from './Finished.jsx';
 import UserTypes from './UserTypes.jsx';
 import Ranking from './Ranking.jsx';
 import '../css/style.scss';
-
-// ***********************************************************************************
-//
-// adres URL do zewnętrznego API z danymi o meczach
-// plus nr aktualnej imprezy
-//
-// ***********************************************************************************
-let url_games = 'http://api.football-data.org/v1/competitions/';
-let event_number = '467';
-
-
-// ***********************************************************************************
-//
-// adres URL do obiektu Types dla danej imprezy
-//
-// ***********************************************************************************
-let url_types = 'https://ubet-60936.firebaseio.com/types';
-
+import FetchService from './Services/FetchService';
 
 
 class App extends React.Component{
@@ -46,14 +29,7 @@ class App extends React.Component{
 
         // 1. pobranie danych z obiektu types
 
-        fetch(url_types+'.json')
-            .then(resp => {
-                if (resp.ok) {
-                    return resp.json()
-                } else {
-                    throw new Error("Network error")
-                }
-            }).then(data => {
+        FetchService.getTypesData( data => {
             let typesArray = []
             for (let key in data) {
                 let newEl = {
@@ -66,30 +42,22 @@ class App extends React.Component{
                 }
                 typesArray.push(newEl)
             }
-            // ograczenie danych - bierzemy tylko te ze statusem 'open' oraz 'in_play'
+            // ograniczenie danych - bierzemy tylko te ze statusem 'open' oraz 'in_play'
             this.setState({
                 usersTypes: typesArray.filter(el => el.status == 'open' || el.status == 'in_play')
             })
-        }).catch(err => console.log(err))
+        })
 
         // 2. pobieramy dane z zewnętrznego API
 
-        fetch(url_games + event_number + '/fixtures', {headers: {"X-Auth-Token": "1e265f892ce541f69195f6d45eedccc8"}})
-            .then(resp => {
-                if (resp.ok) {
-                    return resp.json()
-                } else {
-                    throw new Error("Network error")
-                }
-            }).then(data => {
+        FetchService.getFootballData( data => {
             let allGames = data.fixtures.map(el => {
                 return (el)
             })
             this.setState({
                 games: allGames
             })
-        }).catch(err => console.log(err));
-
+        }  )
     }
 
     componentDidUpdate(){
@@ -124,41 +92,15 @@ class App extends React.Component{
 
                             // 4. update danych w obiekcie Types -> dodajemy punkty, i zmieniamy status na 'closed'
 
-                            fetch(url_types + "/" + this.state.usersTypes[i].key + '.json',
-                                {
-                                    method: 'PATCH', body: JSON.stringify({
-                                        points: calculatedPoints,
-                                        status: 'closed'
-                                    })
-                                })
-                                .then(resp => {
-                                    if (resp.ok) {
-                                        return resp.json()
-                                    } else {
-                                        throw new Error("Network error")
-                                    }
-                                }).then(data => {
-                                console.log(data)
-                            }).catch(err => console.log(err));
+                            FetchService.updateClosedTypesData(this.state.usersTypes[i].key, calculatedPoints);
+
 
                         } else if ( this.state.games[j].status === 'IN_PLAY' ) {
 
                             // update danych w obiekcie Types - zmieniamy status na 'in_play'
-                            fetch(url_types + "/" + this.state.usersTypes[i].key + '.json',
-                                {
-                                    method: 'PATCH', body: JSON.stringify({
-                                        status: 'in_play'
-                                    })
-                                })
-                                .then(resp => {
-                                    if (resp.ok) {
-                                        return resp.json()
-                                    } else {
-                                        throw new Error("Network error")
-                                    }
-                                }).then(data => {
-                                console.log(data)
-                            }).catch(err => console.log(err));
+
+                            FetchService.updateInPlayTypesData(this.state.usersTypes[i].key);
+
 
                         }
 

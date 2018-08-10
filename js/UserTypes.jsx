@@ -1,9 +1,9 @@
 import React from 'react';
 import Template from './Template.jsx';
 import Auth from './Services/Auth';
-import UserTypesRow from './UserTypesRow.jsx'
+import UserTypesRow from './UserTypesRow.jsx';
+import FetchService from './Services/FetchService';
 
-let url_types = 'https://ubet-60936.firebaseio.com/types';
 
 class UserTypes extends React.Component{
     constructor(props){
@@ -19,36 +19,23 @@ class UserTypes extends React.Component{
         Auth.checkLogedIn();
 
         // pobieranie danych z serwera - tabela TYPES
-        fetch(url_types + '.json')
-            .then(resp => {
-                if (resp.ok) {
-                    return resp.json()
-                } else {
-                    throw new Error("Network error")
-                }
-            }).then(data => {
-                this.setState({
-                    userTypes: data
-                })
-        }).catch(err => console.log(err));
+
+        FetchService.getTypesData(data => {
+            this.setState({
+                userTypes: data
+            })
+        })
     }
 
     handleClickDelete = (key) => {
         // usunięcie wybranego wiersza
-        fetch(url_types +'/'+key+'.json', {method: 'delete'})
-            .then(resp => {
-                if (resp.ok) {
-                    return resp.json()
-                } else {
-                    throw new Error("Network error")
-                }
-            }).then(data => {
-                delete this.state.userTypes[key];
-                this.setState({
-                    userTypes: this.state.userTypes
-                })
-            }).catch(err => console.log(err));
 
+        FetchService.deleteTypesData(key, data => {
+            delete this.state.userTypes[key];
+            this.setState({
+                userTypes: this.state.userTypes
+            })
+        } );
     }
 
 

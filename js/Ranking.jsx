@@ -1,9 +1,7 @@
 import React from 'react';
 import Template from './Template.jsx'
+import FetchService from './Services/FetchService';
 
-let url_games = 'http://api.football-data.org/v1/competitions/';
-let event_number = '467';
-let url_types = 'https://ubet-60936.firebaseio.com/types';
 
 class Ranking extends React.Component{
     constructor(props){
@@ -18,14 +16,7 @@ class Ranking extends React.Component{
 
         // ściągnięcie danych z obiektu Types
 
-        fetch(url_types+'.json')
-            .then(resp => {
-                if (resp.ok) {
-                    return resp.json()
-                } else {
-                    throw new Error("Network error")
-                }
-            }).then(data => {
+        FetchService.getTypesData( data => {
             let usersPoints = []
             for (let key in data) {
                 let newEl = {
@@ -39,8 +30,7 @@ class Ranking extends React.Component{
             this.setState({
                 usersPointsLoaded: true,
                 usersPoints: usersPoints.filter(el => el.status == 'closed')          })
-        }).catch(err => console.log(err))
-
+        } )
     }
 
     render(){

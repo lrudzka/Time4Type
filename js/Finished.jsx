@@ -1,9 +1,7 @@
 import React from 'react';
 import Template from './Template.jsx';
 import FinishedRow from './FinishedRow.jsx';
-
-let url_games = 'http://api.football-data.org/v1/competitions/';
-let event_number = '467';
+import FetchService from './Services/FetchService'
 
 class Finished extends React.Component{
     constructor(props){
@@ -22,22 +20,15 @@ class Finished extends React.Component{
 
     componentDidMount() {
 
-       fetch( url_games + event_number + '/fixtures', { headers: {"X-Auth-Token": "1e265f892ce541f69195f6d45eedccc8" }  } )
-            .then( resp => {
-                if(resp.ok){
-                    return resp.json()
-                }else{
-                    throw new Error("Network error")
-                }
-            }).then(data => {
-                let games = data.fixtures.map( el => {
-                    return (
-                        el)
-                }   )
-                this.setState({
-                    games: games.reverse()
-                })
-            }).catch( err => console.log(err) );
+        FetchService.getFootballData(data => {
+                      let games = data.fixtures.map( el => {
+                          return (
+                              el)
+                      }   )
+                      this.setState({
+                          games: games.reverse()
+                      })
+        })
     }
 
     render(){
