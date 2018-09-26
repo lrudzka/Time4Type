@@ -1,8 +1,7 @@
 # Time4Type
 
 ## Description
-Application for typing results of football metches. It works for the current football event - for the time being it has been working for the World Cup 2018 Russia, 
-next event will be Champions League 2018/2019.
+Application for typing results of football matches. The application has been used for typing during the Word Cup in Russia, and it was to be changed for the Champions League 2018/2019, but I have created new version, as you can see in my Github profile.
 
 ### Options available to an unlogged user:
 
@@ -12,9 +11,9 @@ next event will be Champions League 2018/2019.
 
 ### Options available to a logged user:
 
-- entering result types of the incoming metches
+- entering result types of the incoming matches
 - overview of the user's typing history
-- possibility to delete some type entered before of the selected metch and reenter the type once again - if the metch hasn't started yet
+- possibility to delete a type entered before and reenter the type once again - if the match hasn't started yet
 
 ## Technologies
 
